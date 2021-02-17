@@ -1,13 +1,23 @@
 class RestaurantsController < ApplicationController
-  def name
+  def index
+    @restaurants = Restaurant.all
   end
 
-  def address
+  def show
   end
 
-  def phoneNumber:integer
+  def new
   end
 
-  def category
+  def create
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
   end
 end

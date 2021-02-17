@@ -1,0 +1,8 @@
+<h1>Restaurants</h1>
+<p>List of 10 restaurants</p>
+
+<% @restaurants.each do |restaurant| %>
+  <article>
+    <h2><%= link_to restaurant.name, restaurant %></h2>
+  </article>
+<% end %>
