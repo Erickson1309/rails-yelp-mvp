@@ -11,9 +11,17 @@ puts "Creating restaurants..."
     name: Faker::Restaurant.name,
     address: Faker::Address.street_address,
     phone_number: Faker::PhoneNumber.cell_phone_in_e164,
-    category: %w(Chinese Italian Japanese French Belgian).sample
+    category: %w(chinese italian japanese french belgian).sample
   )
 end
+
+# 10.times do
+#   Restaurant.create(
+#     comment: Faker::Restaurant.review ,
+#     rating: rand(1..5,
+#      )
+# end
+
 
 puts "Finished!"
 # Examples:

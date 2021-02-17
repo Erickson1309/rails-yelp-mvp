@@ -5,6 +5,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @review = Review.new
   end
 
   def new
@@ -12,12 +13,12 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.new(article_params)
+    @restaurant = Restaurant.new(restaurant_params)
 
       if @restaurant.save
-        redirect_to @restaurant, notice: 'Restaurant was successfully created'
+        redirect_to restaurant_path(@restaurant), notice: 'Restaurant was successfully created'
       else
-        render :edit
+        render :new
       end
   end
 
@@ -34,6 +35,6 @@ end
 
 private
 
-def article_params
-  params.require(:restaurant).permit(:name, :address, :category)
+def restaurant_params
+  params.require(:restaurant).permit(:name, :address, :phone_number, :category)
 end
