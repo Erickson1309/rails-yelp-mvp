@@ -11,7 +11,7 @@ puts "Creating restaurants..."
     name: Faker::Restaurant.name,
     address: Faker::Address.street_address,
     phone_number: Faker::PhoneNumber.cell_phone_in_e164,
-    category: %w(Pasta Curry Rice Pudding Dessert).sample
+    category: %w(Chinese Italian Japanese French Belgian).sample
   )
 end
 

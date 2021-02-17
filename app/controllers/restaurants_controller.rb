@@ -4,12 +4,21 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @restaurant = Restaurant.find(params[:id])
   end
 
   def new
+    @restaurant = Restaurant.new
   end
 
   def create
+    @restaurant = Restaurant.new(article_params)
+
+      if @restaurant.save
+        redirect_to @restaurant, notice: 'Restaurant was successfully created'
+      else
+        render :edit
+      end
   end
 
   def edit
@@ -20,4 +29,11 @@ class RestaurantsController < ApplicationController
 
   def destroy
   end
+end
+
+
+private
+
+def article_params
+  params.require(:restaurant).permit(:name, :address, :category)
 end
